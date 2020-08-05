@@ -4,6 +4,8 @@ import Header from './Header';
 
 const WalletActivity = () => {
 
+    
+
     return (
         <>
         <Header/>
