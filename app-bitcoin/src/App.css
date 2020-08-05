@@ -1,50 +1,123 @@
 #root {
-  background-color: red;
+  background-image: url(/img/fon.png);
 }
 
 .Main-wrap {
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
+  background-color: #0B889A;
+      padding: 0 40px;
+}
+.Header{
+      background-color: #7accc8;
+    margin: -10px -60px;
+    border-radius: 0 0 40px 40px;
+    border: 8px solid #007B81;
+    display: flex;
+    flex-direction: column;
+    z-index: 333333;
+    position: relative;
+}
+.Wrap-header{
+  display: flex;
+}
+
+.Wallet-block{
+  display: flex;
+}
+   .Wallet-text{
+    color: #0b5d58;
+    font-size: 38px;
+    font-weight: bold;
 }
 
 
+.Btn-header{
+  background-color: #0b5d58;
+  color: #7accc8;
+  padding: 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  max-height: 65px;
+  border: 3px solid #7accc8;
+  font-size: 20px;
+}
 
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Btn-balances{
+  background-color: #0099AB;
+  border: 5px solid #006672;
+    font-size: 22px;
+    padding: 10px 115px;
+    font-weight: bold;
+    border-radius: 0 15px 15px 0;
+    color: #fff;
+    margin-top: 85px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.Btn-balances-rev{
+  background-color: #0099AB;
+  border: 5px solid #006672;
+    font-size: 22px;
+        padding: 10px 60px;
+    font-weight: bold;
+  color: #fff;
+    margin-top: 85px;
+    border-radius: 15px 0 0 15px;
   }
+.Grid-wraper {
+  background-image: url(/img/blue_window.png);
+  background-size: cover;
+  height: 774px;
+      margin-top: -40px;
 }
+/*Deposit*/
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Btn-deposit {
+  background-color: #001E4C;
+    height: 85px;
+    font-size: 25px;
+    margin: 20px;
+    padding: 27px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #6A9EF8;
+    border: 4px solid #002F8B;
+}
+.Deposit-wrap{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+      justify-content: space-between;
+}
+.Btn-coins {
+  background-color: #00A694;
+    height: 30px;
+    font-size: 25px;
+    margin: 20px;
+    padding: 27px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #fff;
+    display: flex;
+    border: 4px solid #00FDE0;
 }
 
-.App-link {
-  color: #61dafb;
+.Btn-all{
+background-color: #001E4C;
+    height: 25px;
+    font-size: 15px;
+    padding: 12px 48px 30px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #00A694;
+    border: 4px solid #002F8B;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+footer {
+  display: flex;
+
 }

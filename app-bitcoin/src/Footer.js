@@ -1,14 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 const Footer = () => {
 	return (
-		 <div className="App">
-      		<footer className="App-header">
-        	<img src={logo} className="App-logo" alt="logo" />
-      </footer>
-    </div>
+		<div className="App">
+      		<footer>
+      			<img src={"/img/bamboo.png"} alt="error"/>
+				<img src={"/img/LOGO.png"} alt="error"/>
+				<img src={"/img/bamboo.png"} alt="error"/>
+      		</footer>
+
+    	</div>
 	)
 }
 
