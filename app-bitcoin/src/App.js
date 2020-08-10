@@ -7,7 +7,8 @@ import { Router, Route, Switch } from "react-router";
 
 
 
-const App = () => {
+const App = (props) => {
+  console.log("app props", props)
   return (
     <>
     <div className="Main-wrap">

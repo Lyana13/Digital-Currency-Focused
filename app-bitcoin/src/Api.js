@@ -1,47 +1,44 @@
 
 import axios from 'axios'
 
+
 class BitGoApi {
-    async getWallets()  {
-        const url = 'http://localhost:3005/api/v2/wallets?expandBalance=true';
-        const token = 'v2xaeaf965957b4be0b2ff4431b8c63bb42cb66ff38c0c8ccf85a17d5cc33b68406';
+    baseUrl = "http://localhost:3005/api/v2";
+    token = 'v2xaeaf965957b4be0b2ff4431b8c63bb42cb66ff38c0c8ccf85a17d5cc33b68406';
+
+    async doGetRequest(url, callback) {
         try {
             const response = await axios({
                 method: 'get',
-                url: url,
+                url: this.baseUrl + url,
                 headers: {
-                    'Authorization': `Bearer ${token}`
+                    'Authorization': `Bearer ${this.token}`
                 }
             });
-            console.log('Успех:', response);
-            return response.data.wallets
+            console.log(url, '\nSuccess:', response);
+            return callback(response.data)
             
         } catch (error) {
-            console.error('Ошибка:', error);
+            console.error(url, '\nError:', error);
             throw(error)
         }
     }
 
-    async getWalletByCoin(coin)  {
-        const url = `http://localhost:3005/api/v2/${coin}/wallet`;
-        const token = 'v2xaeaf965957b4be0b2ff4431b8c63bb42cb66ff38c0c8ccf85a17d5cc33b68406';
-        try {
-            const response = await axios({
-                method: 'get',
-                url: url,
-                headers: {
-                    'Authorization': `Bearer ${token}`
-                }
-            });
-            console.log('Успех:', response);
-            return response.data.wallets[0]
-            
-        } catch (error) {
-            console.error('Ошибка:', error);
-            throw(error)
-        }
+    getWallets()  {
+        return this.doGetRequest(`/wallets?expandBalance=true`, (data) => data.wallets);
     }
-    
+
+    getWalletByCoin(coin)  {
+        return this.doGetRequest(`/${coin}/wallet`, (data) => data.wallets[0]);
+    }
+
+    getLastDepositAddress(coin, walletId) {
+        return this.doGetRequest(`/${coin}/wallet/${walletId}/addresses`, (data) => data.addresses[0].address);
+    }
+
+    getDeposits(coin, walletId) {
+        return this.doGetRequest(`/${coin}/wallet/${walletId}/transfer?type=receive`, (data) => data.transfers);
+    }
 }
 
 const bitGoApi = new BitGoApi();

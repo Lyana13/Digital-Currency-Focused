@@ -6,7 +6,7 @@ const Withdraw = () => {
 
     return (
         <>
-        <Header/>
+        <Header title="Withdrow page"/>
         <div className="Grid-wraper">
         <div className="Deposit-wrap">
             <div>

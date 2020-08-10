@@ -1,7 +1,9 @@
 import React from 'react';
 import './App.css'
 
-const Header = () => {
+const Header = (props) => {
+	console.log("Header props: ", props);
+	
 	return (
 		<>
 		<header>
@@ -10,8 +12,8 @@ const Header = () => {
 				<div className="Wrap-header">
 					<button className="Btn-header">Back to game</button>
 					<div className="Wallet-block">
-						<img src={"/img/Main_Wallet_page__wallet.png"} alt="error"/>
-						<h1 className="Wallet-text">Main Wallet</h1>
+						<img src={"/img/wallet.png"} alt="error"/>
+	<h1 className="Wallet-text">{props.title}</h1>
 					</div>
 				</div>
 			</div>

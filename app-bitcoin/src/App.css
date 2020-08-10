@@ -1,5 +1,11 @@
+@font-face {
+  font-family: Arial-Black; /* Имя шрифта */
+  src: url(/src/font.ttf); /* Путь к файлу со шрифтом */
+}
+
 #root {
   background-image: url(/img/fon.png);
+  font-family: sans-serif;
 }
 
 .Main-wrap {
@@ -7,10 +13,11 @@
   max-width: 900px;
   margin: 0 auto;
   background-color: #0B889A;
-      padding: 0 40px;
+  padding: 0 40px;
 }
-.Header{
-      background-color: #7accc8;
+
+.Header {
+    background-color: #7accc8;
     margin: -10px -60px;
     border-radius: 0 0 40px 40px;
     border: 8px solid #007B81;
@@ -19,21 +26,30 @@
     z-index: 333333;
     position: relative;
 }
-.Wrap-header{
+
+.Wrap-header {
   display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-left: 80px;
+  margin-bottom: 30px;
 }
 
-.Wallet-block{
+.Wallet-block {
   display: flex;
-}
-   .Wallet-text{
-    color: #0b5d58;
-    font-size: 38px;
-    font-weight: bold;
+  align-items: center;
+  margin-left: 80px;
 }
 
+.Wallet-text {
+  color: #0b5d58;
+  font-size: 38px;
+  font-weight: bold;
+  margin-left: 40px;
+  -webkit-text-stroke: 1px #5EDBD5;
+}
 
-.Btn-header{
+.Btn-header {
   background-color: #0b5d58;
   color: #7accc8;
   padding: 20px;
@@ -48,77 +64,145 @@
   text-align: center;
 }
 
-.Btn-balances{
+.Btn-balances {
   background-color: #0099AB;
   border: 5px solid #006672;
-    font-size: 22px;
-    padding: 10px 115px;
-    font-weight: bold;
-    border-radius: 0 15px 15px 0;
-    color: #fff;
-    margin-top: 85px;
-}
-.Btn-balances-rev{
-  background-color: #0099AB;
-  border: 5px solid #006672;
-    font-size: 22px;
-        padding: 10px 60px;
-    font-weight: bold;
+  font-size: 22px;
+  padding: 10px 115px;
+  font-weight: bold;
+  border-radius: 0 15px 15px 0;
   color: #fff;
-    margin-top: 85px;
-    border-radius: 15px 0 0 15px;
-  }
+  white-space: nowrap;
+  margin-top: 85px;
+}
+
+.Btn-balances-rev {
+  background-color: #0099AB;
+  border: 5px solid #006672;
+  font-size: 22px;
+  padding: 10px 60px;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 85px;
+  border-radius: 15px 0 0 15px;
+}
+
 .Grid-wraper {
   background-image: url(/img/blue_window.png);
   background-size: cover;
   height: 774px;
-      margin-top: -40px;
+  margin-top: -40px;
 }
+
 /*Deposit*/
 
 .Btn-deposit {
   background-color: #001E4C;
-    height: 85px;
-    font-size: 25px;
-    margin: 20px;
-    padding: 27px;
-    font-weight: bold;
-    border-radius: 30px;
-    color: #6A9EF8;
-    border: 4px solid #002F8B;
-    text-decoration: none;
+  height: 85px;
+  font-size: 25px;
+  margin: 20px;
+  padding: 27px;
+  font-weight: bold;
+  border-radius: 30px;
+  color: #6A9EF8;
+  border: 4px solid #002F8B;
+  text-decoration: none;
 }
-.Deposit-wrap{
+
+.Deposit-wrap {
   display: flex;
-      justify-content: space-between;
+  justify-content: space-between;
 }
+
 .Btn-coins {
   background-color: #00A694;
-    height: 30px;
-    font-size: 25px;
-    margin: 20px;
-    padding: 27px;
-    font-weight: bold;
-    border-radius: 30px;
-    color: #fff;
-    display: flex;
-    border: 4px solid #00FDE0;
+  height: 30px;
+  font-size: 25px;
+  margin: 20px;
+  padding: 27px;
+  font-weight: bold;
+  border-radius: 30px;
+  color: #fff;
+  display: flex;
+  border: 4px solid #00FDE0;
+  align-items: center;
+  height: 10px;
+  width: 300px;
 }
 
-.Btn-all{
-background-color: #001E4C;
-    height: 25px;
-    font-size: 15px;
-    padding: 12px 48px 30px;
-    font-weight: bold;
-    border-radius: 30px;
-    color: #00A694;
-    border: 4px solid #002F8B;
-
+.Btn-all {
+  width: 295px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  background-color: #001E4C;
+  height: 25px;
+  font-size: 15px;
+  padding: 12px 48px 30px;
+  font-weight: bold;
+  border-radius: 30px;
+  color: #00A694;
+  border: 4px solid #002F8B;
 }
 
+.Balance-deposit {
+  color: #008796;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px #003482;
+}
+
+.Balance-block {
+  border: 4px solid #6091EA;
+  background-color: #001B49;
+  height: 55px;
+  width: 240px;
+  border-radius: 20px;
+  color: #6091EA;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  overflow-y: hidden;
+}
+
+.Recent-block {
+  display: flex;
+  justify-content: space-between;
+  border: 5px solid #75B8BF;
+  border-radius: 25px;
+  padding: 0 25px;
+  margin: 10px 0;
+  flex-direction: column;
+  width: 300px;
+  height: 400px;
+}
+
+.Deposits-item {
+  display: flex;
+}
+
+.Deposits-item span {
+  display: flex;
+  flex-direction: column;
+  color: #5DB9A5;
+  padding: 20px;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.Recent-title {
+  color: #AEFD7D;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.RCode {
+  background: #FFA33D;
+  border-radius: 100px;
+  width: 222px;
+  height: 222px;
+  text-align: center;
+  line-height: 23;
+}
 
 footer {
   display: flex;
-
 }
