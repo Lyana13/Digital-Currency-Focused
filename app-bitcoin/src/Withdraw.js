@@ -8,27 +8,34 @@ const Withdraw = () => {
         <>
         <Header title="Withdrow page"/>
         <div className="Grid-wraper">
+        <h1 className="Balance-withdrow">BTC BALANCE</h1>
         <div className="Deposit-wrap">
             <div>
-                <button className="Btn-balances">Withdraw Bitcoin</button>
-                <div style={{display: "flex"}}>
-                <div style={{display: "flex", flexDirection: "column"}}>
-                    <h1>Destination</h1>
-                    <input />
-
-                    <h1>Sending Amount</h1>
-                    <input />
-
-                    <button className="Btn-balances-rev">Send</button>
+                <button className="Btn-Withdraw">Withdraw Bitcoin</button>
+                <div style={{display: "flex", marginLeft: '12%'}}>
+                    <div style={{display: "flex", flexDirection: "column", margin: "0 auto"}}>
+                        <h1 className="Title-withdrow">Destination</h1>
+                        <input className="Input-withdrow" type="text" placeholder="Enter Bitcoin Address Here" />
+                        <h1 className="Title-withdrow">Sending Amount</h1>
+                        <input className="Input-withdrow"  type="text" placeholder="Enter Bitcoin Address Here" />
+                        <button className="Btn-send">Send</button>
                     </div>
                 </div>
             </div>
 
             <div>
-                <button className="Btn-balances-rev">Recent BTC Outgoing Transactions</button>
-                <div>
-                    BLSL
-                </div>
+                <button className="Btn-Withdraw-rev">Recent BTC <br/>Outgoing Transactions</button>
+				<div className="Recent-block">
+					<div style={{ display:"flex", flexDirection: "column" }}>
+						<div style={{ display: "flex", justifyContent: "space-between", paddingTop: "25px" }}>
+							<span className="Recent-title">Date</span>
+							<span className="Recent-title">Transactions ID</span>
+							<span className="Recent-title">Amount</span>
+							</div>
+							<div>transactions</div>
+					</div>
+					<button className="Btn-all">View All Transactions...</button>
+				</div>
             </div>
          </div>
 		</div>

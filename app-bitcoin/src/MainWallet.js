@@ -8,7 +8,7 @@ const MainWallet = () => {
 
 	const [wallets, setWallets] = useState(null); 
 	
-	function getCoinImg(coin){
+	function getCoinImg(coin) {
 		switch(coin) {
 			case 'tbtc', 'btc' :
 			return "coin_1.png"
@@ -56,7 +56,6 @@ const MainWallet = () => {
 	  }
 
   return (
-
     <>
       <Header title="Main Wallet" />
       <div className="Grid-wraper">
@@ -66,8 +65,7 @@ const MainWallet = () => {
 		<div style={{textAlign: "center"}}>
 			<div >
 				{ main }
-			</div>
-				
+			</div>	
 			<button className="Btn-all"><Link to={`/wallet/activity`}>View All Transactions...</Link></button>
 		</div>
 		</div>

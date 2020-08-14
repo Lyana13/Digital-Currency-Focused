@@ -1,6 +1,4 @@
-
 import axios from 'axios'
-
 
 class BitGoApi {
     baseUrl = "http://localhost:3005/api/v2";

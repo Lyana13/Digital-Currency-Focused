@@ -1,14 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import QRCode from "react-qr-code";
 import Footer from './Footer';
 import Header from './Header';
 import bitGoApi from './Api'; 
 
 const Deposit = (props) => {
-
 	const [wallet, setWallet] = useState(null);
 	const [address, setAdresess] = useState(null);
 	const [deposits, setDeposits] = useState(null);
+  	const textAreaRef = useRef(null);
+
+  function copyToClipboard(e) {
+    textAreaRef.current.select();
+    document.execCommand('copy');
+    e.target.focus();
+  };
 
 	const { currency } = props.match.params;
 
@@ -54,34 +60,47 @@ const Deposit = (props) => {
 		main = (
 			<>
 			<div>
-			<button className="Btn-balances">Deposit Bitcoin</button>
-			<h1 className="Balance-deposit">{ wallet.coin } BALANCE</h1>
-  			<div className="Balance-block">{wallet.balance}</div>
-			<div>
-			</div>
-			<h1 style={{color: "#008796"}}>Your deposit Address</h1>
-				<div className="Balance-block">{address}</div>
-				<div className="RCode">
-					<QRCode value={address} bgColor="#FFA33D" size='150'/>
+			<button className="Btn-balances-deposit">Deposit Bitcoin</button>
+			<div style={{marginLeft: "60px"}} >
+				<h1 className="Balance-deposit">{ wallet.coin } BALANCE</h1>
+				<div className="Balance-block">{wallet.balance}</div>
+				<div>
 				</div>
-			<div>
+				<h1 className="Text-address">Your deposit Address</h1>
+					<div  className="Balance-block">
+					<div  className="e">
+					<input  className="Qr-Code-Input" ref={textAreaRef} value={address}  />
+					</div>
+					<div>
+					{ document.queryCommandSupported('copy') &&
+						<img onClick={copyToClipboard} src={"/img/copy.svg"} width={"20px"} alt="error" />
+     				}
+					 </div>
+					 </div>
+					<div className="RCode">
+						<QRCode value={address} bgColor="#FFA33D" size='80'/>
+					</div>
+				<div>
+			</div>
 			</div>
 		</div>
 
 		<div>
 			<button className="Btn-balances-rev">Recent BTC Deposits</button>
-			<div className="Recent-block">
-				<div style={{display:"flex", flexDirection: "column"}}>
-					<div>
-						<span className="Recent-title">Date</span>
+			<div>
+				<div className="Recent-block">
+					<div style={{ display:"flex", flexDirection: "column" }}>
+						<div style={{ display: "flex", justifyContent: "space-between", paddingTop: "25px" }}>
+							<span className="Recent-title">Date</span>
+							
+							<span className="Recent-title">Transactions ID</span>
 						
-						<span className="Recent-title">Transactions ID</span>
-					
-						<span className="Recent-title">Amount</span>
+							<span className="Recent-title">Amount</span>
+							</div>
+							<div>{transactions}</div>
 						</div>
-						<div>{transactions}</div>
-					</div>
-				<button className="Btn-all">View All Transactions...</button>
+					<button className="Btn-all">View All Transactions...</button>
+				</div>
 			</div>
 		</div>
 		</>
@@ -97,10 +116,6 @@ const Deposit = (props) => {
       <div className="Deposit-wrap">
       	{main}
 	</div>
-		<div style={{textAlign: "center"}}>
-			
-			
-		</div>
 		</div>
       <Footer />
    </>

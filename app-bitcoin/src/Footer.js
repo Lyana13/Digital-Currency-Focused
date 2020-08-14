@@ -6,7 +6,7 @@ const Footer = () => {
 		<div className="App">
       		<footer>
       			<img src={"/img/bamboo.png"} alt="error"/>
-				<img src={"/img/LOGO.png"} alt="error"/>
+				<img style={{verticalAlign: "top", paddingTop: "33px"}} src={"/img/LOGO.png"} alt="error"/>
 				<img src={"/img/bamboo.png"} alt="error"/>
       		</footer>
 

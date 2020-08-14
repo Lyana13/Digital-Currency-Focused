@@ -1,11 +1,11 @@
 @font-face {
-  font-family: Arial-Black; /* Имя шрифта */
-  src: url(/src/font.ttf); /* Путь к файлу со шрифтом */
+  font-family: 'Arial-Black';
+  src: local('Arial-Black'), url(./font/Arial-Black.ttf) format('truetype');
 }
 
 #root {
   background-image: url(/img/fon.png);
-  font-family: sans-serif;
+  font-family:'Arial-Black';
 }
 
 .Main-wrap {
@@ -52,61 +52,116 @@
 .Btn-header {
   background-color: #0b5d58;
   color: #7accc8;
-  padding: 20px;
+  padding: 16px;
   border-radius: 25px;
   font-weight: bold;
-  max-height: 65px;
-  border: 3px solid #7accc8;
-  font-size: 20px;
+  border: 4px solid #53D9D6;
+  font-size: 22px;
+  -webkit-text-stroke: 2px #005E58;
+  font-family: Arial Black;
 }
 
 .App {
   text-align: center;
 }
-
+.Balance-withdrow{
+  color: #9EF0F7;
+  text-align: center;
+    padding-top: 80px;
+}
 .Btn-balances {
   background-color: #0099AB;
   border: 5px solid #006672;
-  font-size: 22px;
-  padding: 10px 115px;
+  font-size: 30px;
+  padding: 10px 130px;
   font-weight: bold;
   border-radius: 0 15px 15px 0;
   color: #fff;
   white-space: nowrap;
-  margin-top: 85px;
+  margin-top: 120px;
+  -webkit-text-stroke: 2px #006673;
+  font-family:'Arial-Black';
 }
-
-.Btn-balances-rev {
+.Btn-balances-deposit {
   background-color: #0099AB;
   border: 5px solid #006672;
-  font-size: 22px;
-  padding: 10px 60px;
+  font-size: 28px;
+  padding: 10px 80px;
+  font-weight: bold;
+  border-radius: 0 15px 15px 0;
+  color: #fff;
+  white-space: nowrap;
+  margin-top: 120px;
+  -webkit-text-stroke: 2px #006673;
+  font-family:'Arial-Black';
+}
+.Btn-balances-rev {
+  font-family:'Arial-Black';
+  background-color: #0099AB;
+  border: 5px solid #006672;
+  font-size: 25px;
+  padding: 15px 75px;
   font-weight: bold;
   color: #fff;
-  margin-top: 85px;
+  margin-top: 120px;
+  margin-left: 18px;
   border-radius: 15px 0 0 15px;
+  -webkit-text-stroke: 1px #006673;
+}
+.Btn-Withdraw {
+  background-color: #0099AB;
+  border: 5px solid #006672;
+  font-size: 25px;
+  padding: 17px 80px;
+  font-weight: bold;
+  border-radius: 0 15px 15px 0;
+  color: #fff;
+  white-space: nowrap;
+  margin-top: 30px;
+  font-family: 'Arial-Black';
+  -webkit-text-stroke: 2px #006673;
+}
+
+.Btn-Withdraw-rev {
+  padding: 0px 40px;
+  font-family: 'Arial-Black';
+  background-color: #0099AB;
+  border: 5px solid #006672;
+  font-size: 25px;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 30px;
+  margin-left: 50px;
+  border-radius: 15px 0 0 15px;
+  -webkit-text-stroke: 2px #006673;
 }
 
 .Grid-wraper {
   background-image: url(/img/blue_window.png);
   background-size: cover;
   height: 774px;
-  margin-top: -40px;
+  margin-top: -75px;
 }
 
 /*Deposit*/
 
 .Btn-deposit {
   background-color: #001E4C;
-  height: 85px;
   font-size: 25px;
   margin: 20px;
-  padding: 27px;
+  padding: 0 35px;
   font-weight: bold;
   border-radius: 30px;
   color: #6A9EF8;
   border: 4px solid #002F8B;
   text-decoration: none;
+}
+
+button.Btn-deposit a {
+  color: #699DF9;
+  text-decoration: none;
+  -webkit-text-stroke: 1px #062150;
+  font-family: Arial Black;
 }
 
 .Deposit-wrap {
@@ -115,6 +170,7 @@
 }
 
 .Btn-coins {
+  -webkit-text-stroke: 2px #007464;
   background-color: #00A694;
   height: 30px;
   font-size: 25px;
@@ -128,6 +184,7 @@
   align-items: center;
   height: 10px;
   width: 300px;
+  justify-content: space-between;
 }
 
 .Btn-all {
@@ -136,43 +193,66 @@
   margin-bottom: 40px;
   background-color: #001E4C;
   height: 25px;
-  font-size: 15px;
+  font-size: 14px;
+  font-family:'Arial-Black';
   padding: 12px 48px 30px;
   font-weight: bold;
   border-radius: 30px;
   color: #00A694;
   border: 4px solid #002F8B;
+  margin-top: 40px;
 }
 
+button.Btn-all a {
+  color: #00A694;
+  text-decoration: none;
+}
 .Balance-deposit {
   color: #008796;
   text-transform: uppercase;
   -webkit-text-stroke: 1px #003482;
+  font-size: 26px;
+  text-align: center;
 }
-
+.Text-address{
+  color: #008796;
+  font-size: 26px;
+  text-align: center;
+  -webkit-text-stroke: 1px #003482;
+}
 .Balance-block {
-  border: 4px solid #6091EA;
   background-color: #001B49;
-  height: 55px;
   width: 240px;
   border-radius: 20px;
   color: #6091EA;
-  font-size: 30px;
+  font-size: 20px;
   font-weight: bold;
   text-align: center;
   overflow-y: hidden;
+  border: 2px solid #003482;
+  padding: 8px 10px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly
 }
-
+.Qr-Code-Input{
+  background-color: #001B49;
+  color: #6091EA;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
 .Recent-block {
   display: flex;
   justify-content: space-between;
   border: 5px solid #75B8BF;
   border-radius: 25px;
-  padding: 0 25px;
+  padding: 0 15px;
   margin: 10px 0;
   flex-direction: column;
-  width: 300px;
-  height: 400px;
+  width: 380px;
+  max-height: 100%;
+  margin-right: 30px;
 }
 
 .Deposits-item {
@@ -183,26 +263,53 @@
   display: flex;
   flex-direction: column;
   color: #5DB9A5;
-  padding: 20px;
+  padding: 15px 3px;
   font-weight: bolder;
-  font-size: 20px;
+  font-size: 13px;
 }
 
 .Recent-title {
   color: #AEFD7D;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
 }
 
+.Title-withdrow {
+  color: #008496;
+  -webkit-text-stroke: 1px #001E89;
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.Input-withdrow {
+  border: 4px solid #002E86;
+  border-radius: 35px;
+  background-color: #001C4A;
+  color: #3A5689;
+  font-size: 19px;
+  font-family: 'Arial-Black';
+  padding: 15px 60px 15px 30px;
+}
+
+.Btn-send {
+  color: #fff;
+  -webkit-text-stroke: 2px #107D6E;
+  background-color: #00A694;
+  border: 5px solid #00FFE5;
+  width: 40%;
+  padding: 5px 0px;
+  font-size: 28px;
+  border-radius: 25px;
+  margin: 17% 30%;
+  font-family: Arial Black;
+}
 .RCode {
   background: #FFA33D;
   border-radius: 100px;
-  width: 222px;
-  height: 222px;
+  width: 130px;
+  height: 130px;
   text-align: center;
-  line-height: 23;
-}
-
-footer {
-  display: flex;
+  line-height: 13;
+  margin: 0 auto;
+  margin-top: 35px;
 }

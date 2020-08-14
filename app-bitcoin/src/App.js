@@ -5,8 +5,6 @@ import Withdraw from './Withdraw';
 import WalletActivity from './WalletActivity';
 import { Router, Route, Switch } from "react-router";
 
-
-
 const App = (props) => {
   console.log("app props", props)
   return (
